@@ -7,19 +7,25 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && cd dist && rsync -avz -e 'ssh -i ~/Downloads/key.pem' * ubuntu@ssh.lesbians.monster:/home/ubuntu/portfolio && ssh -i ~/Downloads/key.pem ubuntu@ssh.lesbians.monster 'cd ~ && sudo rm -rf /var/www/portfolio && sudo cp -r portfolio /var/www/portfolio && sudo chmod 777 /var/www/portfolio/'"
   },
   "dependencies": {
     "@tweenjs/tween.js": "^25.0.0",
+    "@types/next": "^8.0.7",
     "animate.css": "^4.1.1",
     "animejs": "^3.2.2",
+    "clsx": "^2.1.1",
     "gsap": "^3.12.5",
     "lucide-react": "^0.456.0",
+    "next": "^15.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.0",
+    "sharp": "^0.33.5",
+    "tailwind-merge": "^2.5.4",
     "three": "^0.170.0",
-    "three.js": "^0.77.1",
+    "three.js": "^0.77.0",
     "tween": "^0.9.0",
     "tweenjs": "^1.0.2"
   },

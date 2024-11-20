@@ -6,7 +6,7 @@ const mods = [
   {
     title: "Mob API",
     desc: "Easily add new mobs to your Minecraft server.",
-    img: "/rose.png", 
+    img: "/images/rose.webp", 
     type: "Plugin",
     tech: ["Java", "Spigot API"],
     link: "https://www.spigotmc.org/resources/leafs-mob-api.108711/"
@@ -14,7 +14,7 @@ const mods = [
   {
     title: "Arctic Prisons",
     desc: "A prison plugin core for Minecraft with build in permissions and a customisable GUI.",
-    img: "/rose.png",
+    img: "/images/rose.webp",
     link: "https://github.com/LeafDevs/ArcticPrisons",
     type: "Mod",
     tech: ["Java", "Paper API", "Maven"] 
@@ -22,7 +22,7 @@ const mods = [
   {
     title: "MMORPG Core",
     desc: "A core plugin for a MMORPG Minecraft server.",
-    img: "/rose.png",
+    img: "/images/rose.webp",
     link: "https://github.com/LeafDevs/SeniorProject",
     type: "Plugin",
     tech: ["MMORPG", "Java", "Spigot API"]
@@ -70,23 +70,23 @@ function Mods() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#FF7F6E] to-[#FFA07A] py-20 px-4 text-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#FF7F6E] to-[#FFA07A] py-10 sm:py-20 px-4 text-white">
       <div className="container mx-auto max-w-7xl">
         <Nav />
 
-        <h1 className="section-title text-6xl font-bold text-center mb-8 opacity-0 text-white">
+        <h1 className="section-title text-4xl sm:text-6xl font-bold text-center mb-6 sm:mb-8 opacity-0 text-white">
           Minecraft Mods & Plugins
         </h1>
         
-        <p className="text-white/90 text-xl text-center mb-16 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-white/90 text-lg sm:text-xl text-center mb-10 sm:mb-16 max-w-3xl mx-auto leading-relaxed">
           Explore my collection of custom Minecraft mods and plugins that enhance gameplay with new features, mechanics, and improvements.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {mods.length === 0 ? (
-            <div className="col-span-full text-center py-20 bg-white/10 backdrop-blur-lg rounded-3xl">
-              <h2 className="text-3xl font-semibold text-white mb-4">No Mods Available</h2>
-              <p className="text-white/80 text-lg">Check back soon for exciting new mods!</p>
+            <div className="col-span-full text-center py-10 sm:py-20 bg-white/10 backdrop-blur-lg rounded-3xl">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-4">No Mods Available</h2>
+              <p className="text-white/80 text-base sm:text-lg">Check back soon for exciting new mods!</p>
             </div>
           ) : (
             mods.map((mod, index) => (
@@ -102,9 +102,9 @@ function Mods() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <div className="p-6 flex flex-col flex-grow relative z-10">
-                  <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-2xl font-bold text-white group-hover:text-[#FF7F6E] transition-colors duration-300">
+                <div className="p-4 sm:p-6 flex flex-col flex-grow relative z-10">
+                  <div className="flex flex-col sm:flex-row justify-between items-start mb-4">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-[#FF7F6E] transition-colors duration-300 mb-2 sm:mb-0">
                       {mod.title}
                     </h3>
                     <span className="px-3 py-1 bg-[#FF7F6E] text-white rounded-full text-sm font-medium">
@@ -127,14 +127,14 @@ function Mods() {
                       href={mod.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center space-x-2 text-white bg-[#FF7F6E] hover:bg-[#FF8674] px-6 py-3 rounded-full transition-all duration-300 w-full transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF7F6E]"
+                      className="inline-flex items-center justify-center space-x-2 text-white bg-[#FF7F6E] hover:bg-[#FF8674] px-4 sm:px-6 py-2 sm:py-3 rounded-full transition-all duration-300 w-full transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF7F6E]"
                     >
                       <span className="text-sm font-medium">
                         {mod.link.includes('spigotmc.org') ? 'View on Spigot' : 'View on GitHub'}
                       </span>
                       {mod.link.includes('spigotmc.org') ? (
                         <svg 
-                          className="w-5 h-5"
+                          className="w-4 h-4 sm:w-5 sm:h-5"
                           fill="currentColor" 
                           viewBox="0 0 24 24"
                         >
@@ -142,7 +142,7 @@ function Mods() {
                         </svg>
                       ) : (
                         <svg
-                          className="w-5 h-5"
+                          className="w-4 h-4 sm:w-5 sm:h-5"
                           fill="currentColor"
                           viewBox="0 0 24 24"
                         >
